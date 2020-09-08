@@ -1,0 +1,166 @@
+<!-- Ruined city wallpaper source: https://wallpapercave.com/w/KULK50d -->
+<!-- "Flowing Into The Darkness"; Artist: nyoko; source: https://www.youtube.com/watch?v=x74grrke9qE -->
+<!-- Royalty Free Dark ambient music; Artist: Unknown; source: https://www.youtube.com/watch?v=lATJR6DG23k -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=400">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+  <script src="./script.js" defer></script>
+  <link rel="icon" type="image/png" href="img/favicon.png"/>
+  <link rel = "stylesheet"
+   type = "text/css"
+   href = "./style.css" />
+  <title>Post Apocalyptic Casino</title>
+</head>
+<body oncontextmenu="return false;">
+
+    <div class="nav">
+      </div>
+      
+      <hr id="topLine"><hr id="middleLine"><hr id="bottomLine"> 
+       
+      <img id="bb" src="img/omg2.png">
+       
+       <div class="reels">
+       
+      <div class="wrapper">
+        <div class="boxes">
+          <div class="box1"><img class="reelimg" src="img/3xBAR.png"></div>
+          <div class="box1"><img class="reelimg" src="img/BAR.png"></div>
+          <div class="box1"><img class="reelimg" src="img/2xBAR.png"></div>
+          <div class="box1"><img class="reelimg" src="img/7.png"></div>
+          <div class="box1"><img class="reelimg" src="img/CHERRY.png"></div>
+      </div>
+      </div>
+      <div class="wrapper">
+        <div class="boxes">
+          <div class="box2"><img class="reelimg" src="img/3xBAR.png" ></div>
+          <div class="box2"><img class="reelimg" src="img/BAR.png" ></div>
+          <div class="box2"><img class="reelimg" src="img/2xBAR.png"></div>
+          <div class="box2"><img class="reelimg" src="img/7.png"></div>
+          <div class="box2"><img class="reelimg" src="img/CHERRY.png"></div>
+      </div>
+      </div>
+      <div class="wrapper">
+        <div class="boxes">
+          <div class="box3"><img class="reelimg" src="img/3xBAR.png"></div>
+          <div class="box3"><img class="reelimg" src="img/BAR.png"></div>
+          <div class="box3"><img class="reelimg" src="img/2xBAR.png"></div>
+          <div class="box3"><img class="reelimg" src="img/7.png"></div>
+          <div class="box3"><img class="reelimg" src="img/CHERRY.png"></div>
+      </div>
+      </div>
+      
+    </div>
+    <div id="controls">
+    <h1 style="display:inline">Balance: </h1><h1 style="display:inline;font-size:32px!important" id="currentBalance" class="glow" ></h1><br><br><br>
+<button onclick="machine.pickResult()">Play</button>
+<input type="radio" name="mode" id="debug" value="debug" onchange="machine.toggleDebugger()">
+<label for="debug">Debug</label>
+<input type="radio" name="mode" id="random" value="random" checked onchange="machine.toggleDebugger()">
+<label for="random">Random</label></div><br><br>
+
+<div id="debug_area">
+<p>1st reel</p>
+<select name="results1" id="firstsymbol">
+  <option value="1">3xBAR</option>
+  <option value="2">BAR</option>
+  <option value="3">2xBAR</option>
+  <option value="4">7</option>
+  <option value="5">CHERRY</option>
+</select>
+<select name="results1line" id="firstline">
+  <option value="top">Top</option>
+  <option value="middle">Middle</option>
+  <option value="bottom">Bottom</option>
+</select>
+<p>2nd reel</p>
+<select name="results2" id="secondsymbol">
+  <option value="1">3xBAR</option>
+  <option value="2">BAR</option>
+  <option value="3">2xBAR</option>
+  <option value="4">7</option>
+  <option value="5">CHERRY</option>
+</select>
+<select name="results2line" id="secondline">
+  <option value="top">Top</option>
+  <option value="middle">Middle</option>
+  <option value="bottom">Bottom</option>
+</select>
+<p>3rd reel</p>
+<select name="results3" id="thirdsymbol">
+  <option value="1">3xBAR</option>
+  <option value="2">BAR</option>
+  <option value="3">2xBAR</option>
+  <option value="4">7</option>
+  <option value="5">CHERRY</option>
+</select>
+<select name="results3line" id="thirdline">
+  <option value="top">Top</option>
+  <option value="middle">Middle</option>
+  <option value="bottom">Bottom</option>
+</select>
+
+<br><br><br>
+<p>set balance</p>
+<input type="text" value=13 id='balance' oninput="machine.setBalance()" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" name="itemConsumption" ></input>
+</div>
+
+<table>
+  <tr>
+    <th id='titleLine'>Line</th>
+    <th>Symbols</th> 
+    <th class="score">Score</th>
+  </tr>
+  <tr>
+    <td>Top</td>
+    <td><img src="img/CHERRY.png" width="50px" height="50px"><img src="img/CHERRY.png" width="50px" height="50px"><img src="img/CHERRY.png" width="50px" height="50px"></td>
+    <td class="score glow" name="2000">2000</td>
+  </tr>
+  <tr>
+    <td>Middle</td>
+    <td><img src="img/CHERRY.png" width="50px" height="50px"><img src="img/CHERRY.png" width="50px" height="50px"><img src="img/CHERRY.png" width="50px" height="50px"></td>
+    <td class="score glow" name="1000">1000</td>
+  </tr>
+  <tr>
+    <td>Bottom</td>
+    <td><img src="img/CHERRY.png" width="50px" height="50px"><img src="img/CHERRY.png" width="50px" height="50px"><img src="img/CHERRY.png" width="50px" height="50px"></td>
+    <td class="score glow" name="4000">4000</td>
+  </tr>
+  <tr>
+    <td>Any</td>
+    <td><img src="img/7.png" width="50px" height="50px"><img src="img/7.png" width="50px" height="50px"><img src="img/7.png" width="50px" height="50px"></td>
+    <td class="score glow" name="150">150</td>
+  </tr>
+  <tr>
+    <td>Any</td>
+    <td><img class="c7" src="img/C7.png" height="50px"><img class="c7" src="img/C7.png" height="50px"><img class="c7" src="img/C7.png" height="50px"></td>
+    <td class="score glow" name="75">75</td>
+  </tr>
+  <tr>
+    <td>Any</td>
+    <td><img src="img/3xBAR.png" width="50px" height="50px"><img src="img/3xBAR.png" width="50px" height="50px"><img src="img/3xBAR.png" width="50px" height="50px"></td>
+    <td class="score glow"  name="50">50</td>
+  </tr>
+  <tr>
+    <td>Any</td>
+    <td><img src="img/2xBAR.png" width="50px" height="50px"><img src="img/2xBAR.png" width="50px" height="50px"><img src="img/2xBAR.png" width="50px" height="50px"></td>
+    <td class="score glow"  name="20">20</td>
+  </tr>
+  <tr>
+    <td>Any</td>
+    <td><img src="img/BAR.png" width="50px" height="50px"><img src="img/BAR.png" width="50px" height="50px"><img src="img/BAR.png" width="50px" height="50px"></td>
+    <td class="score glow"  name="10">10</td>
+  </tr>
+  <tr>
+    <td>Any</td>
+    <td> <img src="img/ANYBAR.png" width="50px" height="50px"><img src="img/ANYBAR.png" width="50px" height="50px"><img src="img/ANYBAR.png" width="50px" height="50px"></td>
+    <td class="score glow"  name="5">5</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,217 @@
+.table img {
+	margin-right: 20px;
+}
+
+.c7 {
+	margin-right: -5px !important;
+}
+
+.reels {
+	/* background:white; */
+	display: flex;
+	width: 360px;
+	margin: 0 auto;
+	z-index: 1;
+	position: relative;
+	/* this sucks
+*/
+	top: -1100px;
+}
+
+body {
+	background: #000;
+	font-family: Asap, sans-serif;
+	color: white;
+	background-image: url('./img/bg2.png');
+	background-repeat: no-repeat;
+}
+
+hr {
+	width: 360px;
+	color: red;
+	border-top: 5px solid white;
+	position: relative;
+	z-index: 99999;
+	margin: 0 auto;
+	color: #fff;
+	box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff, 0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff,
+		0 0 150px #0ff;
+	z-index: 2;
+}
+
+button {
+	position: relative;
+	cursor: pointer;
+}
+
+h1 {
+	color: white;
+	position: relative;
+}
+
+table {
+	margin-top: 20px;
+	padding: 10px;
+	border-radius: 8px;
+	background: rgba(0, 0, 0, 0.55);
+}
+
+.score {
+	text-align: right;
+	opacity: 1;
+}
+
+#bb {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#controls {
+	margin-top: -1290px;
+	position: relative;
+	top: 0px;
+}
+
+#debug_area {
+	position: relative;
+	top: 0px;
+	display: none;
+}
+
+#topLine {
+	top: 203px;
+	visibility: hidden;
+}
+
+#middleLine {
+	top: 246px;
+	visibility: hidden;
+}
+
+#bottomLine {
+	top: 294px;
+	visibility: hidden;
+}
+
+#titleLine {
+	text-align: left;
+}
+
+.wrapper {
+	border-radius: 10px;
+	width: 100px;
+	height: 200px;
+	position: relative;
+	margin: auto;
+	background: rgb(126, 126, 126);
+	background: linear-gradient(
+		180deg,
+		rgba(126, 126, 126, 1) 3%,
+		rgba(255, 255, 255, 1) 21%,
+		rgba(255, 255, 255, 1) 81%,
+		rgba(134, 134, 134, 1) 100%
+	);
+	overflow: hidden;
+	display: inline-block;
+}
+
+.box1 {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	font-size: 25px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.box2 {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	font-size: 25px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.box3 {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	font-size: 25px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.boxes {
+	position: relative;
+	top: -100px;
+}
+
+.reelimg {
+	height: 100px;
+	width: 100px;
+}
+
+.nav {
+	position: relative;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	margin: 20px 0;
+}
+
+.glow {
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	-webkit-animation: glow 1s ease-in-out infinite alternate;
+	-moz-animation: glow 1s ease-in-out infinite alternate;
+	animation: glow 1s ease-in-out infinite alternate;
+}
+
+/* @keyframes glow {
+from {
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ff, 0 0 40px #0ff, 0 0 50px #0ff, 0 0 60px #0ff, 0 0 70px #0ff;
+}
+
+to {
+  text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+}
+} */
+
+@-webkit-keyframes glow {
+	from {
+		text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073,
+			0 0 60px #e60073, 0 0 70px #e60073;
+	}
+
+	to {
+		text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6,
+			0 0 70px #ff4da6, 0 0 80px #ff4da6;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	#controls {
+		margin-top: -1050px;
+		position: relative;
+		top: 0px;
+	}
+
+	.reels {
+		padding-left: 25px;
+	}
+
+	.glow {
+		text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6,
+			0 0 70px #ff4da6, 0 0 80px #ff4da6;
+		-webkit-animation: none;
+		-moz-animation: none;
+		animation: none;
+	}
+
+	hr {
+		left: 15px;
+	}
+}
